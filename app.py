@@ -34,7 +34,7 @@ st.markdown("<h1 style='text-align: center; font-size:36px; color: #2E8B57;'>�
 st.markdown("<h3 style='text-align: center; font-size:20px; color: #556B2F;'>Upload a leaf image and we'll detect the disease instantly! 📱</h3>", unsafe_allow_html=True)
 
 # Load Model
-model = tf.keras.models.load_model('b_m-net_guava_leaf_model.h5')
+model = tf.keras.models.load_model('./b_m-net_guava_leaf_model.h5')
 
 # Prediction Classes
 CLASS_NAMES = ['Caterpillars', 'Cutting Weevil', 'Die Back', 'Healthy', 'Mealybug Pests', 'Red Rust', 'Yellow spot']  # Update with your classes
@@ -62,3 +62,4 @@ if uploaded_file is not None:
         predicted_class = CLASS_NAMES[np.argmax(preds)]
 
     st.success(f"✅ Prediction: **{predicted_class}**")
+
